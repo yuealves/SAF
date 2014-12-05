@@ -87,10 +87,10 @@ class SAFP(object):
             fs, wavData = wavfile.read(filename)
             # cause we only care the energybands between 300~2000Hz,
             # downsample the signal data to 5000Hz
+            print("")
             downFactor = fs / fsWorkWith
             newLength = int(len(wavData) / downFactor)
             wavData = [wavData[int(i*downFactor)] for i in range(newLength)]
-            print(len(wavData))
         except:
             print("can't open file %s !!!" % filename)
             return
