@@ -7,7 +7,7 @@ from pylab import *
 from collections import defaultdict
 import time
 
-from SAF import SAFP
+from SAF import SAFP, bits
 
 dataBase = {}
 dataBase['trackNum'] = 0
@@ -15,7 +15,7 @@ dataBase['isAdded'] = defaultdict(bool)
 dataBase['id-filename'] = {}
 dataBase['id-fingerprint'] = []
 dataBase['subfingerprint-id'] = defaultdict(list)
-assist = array([2**i for i in range(32)])
+assist = array([2**i for i in range(bits)])
 
 def addTrack(filename, version=2):
     if dataBase['isAdded'][filename] == True:
